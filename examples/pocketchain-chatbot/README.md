@@ -82,7 +82,6 @@ Bot: Your name is Alice! I remember you mentioned that earlier in our conversati
 
 - `OPENAI_API_KEY`: Your OpenAI API key (required)
 - `OPENAI_MODEL`: Model to use (default: "gpt-3.5-turbo")
-- `MAX_TOKENS`: Maximum response length (default: 150)
 
 ### Customization
 

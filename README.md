@@ -10,9 +10,9 @@
 
 ```
 
-A [300-line](src/index.ts) minimalist LLM framework for TypeScript/Node.js
+A minimalist Agentic LLM framework for TypeScript/Node.js
 
-- **Lightweight**: Just 300 lines. Zero bloat, zero dependencies, zero vendor lock-in.
+- **Lightweight**: Just less than 300 lines. Zero bloat, zero dependencies, zero vendor lock-in.
   
 - **Expressive**: Everything you love—Agents, Workflows, RAG, Batch processing, and more.
 
@@ -64,6 +64,14 @@ const flow = new Flow(greetNode);
 const shared: SharedStore = { name: 'Alice' };
 flow.run(shared);
 // Output: Hello, Alice!
+
+// For more complex flows, use the natural syntax:
+const loadData = new LoadData();
+const processData = new ProcessData();
+const saveResult = new SaveResult();
+
+loadData.then(processData).then(saveResult);
+const complexFlow = new Flow(loadData);
 ```
 
 ## Core Concepts
@@ -99,12 +107,30 @@ const nodeA = new NodeA();
 const nodeB = new NodeB();
 const nodeC = new NodeC();
 
-// Connect nodes
-nodeA >> nodeB;  // Default transition
-nodeA - "error" >> nodeC;  // Conditional transition
+// Connect nodes with natural English-like syntax
+nodeA.then(nodeB);           // Default transition
+nodeA.on("error", nodeC);    // Conditional transition
+nodeA.onSuccess(nodeB);      // Success path
+nodeA.onError(nodeC);        // Error handling
 
 const flow = new Flow(nodeA);
 flow.run(shared);
+```
+
+#### Natural Syntax Methods
+
+- **`.then(node)`** - Connect to next node on default/success
+- **`.on(action, node)`** - Connect to node on specific action
+- **`.onSuccess(node)`** - Connect to node on success action
+- **`.onError(node)`** - Connect to node on error action  
+- **`.onRetry(node)`** - Connect to node on retry action
+
+You can chain these methods for fluent, readable code:
+```typescript
+loadData
+  .then(validateData)
+  .then(processData)
+  .onError(handleError);
 ```
 
 ### 3. Shared Store
@@ -187,32 +213,46 @@ class AgentNode extends Node {
     return execRes.action; // 'search', 'answer', etc.
   }
 }
+
+// Connect agent nodes
+const decide = new DecideAction();
+const search = new SearchWeb();
+const answer = new DirectAnswer();
+
+decide.on("search", search);
+decide.on("answer", answer);
+search.then(decide);  // Loop back to decide
 ```
 
 ### RAG Pattern
 ```typescript
 // Offline: Index documents
-const indexFlow = new Flow(
-  new ChunkDocs() >> 
-  new EmbedDocs() >> 
-  new StoreIndex()
-);
+const chunk = new ChunkDocs();
+const embed = new EmbedDocs();
+const store = new StoreIndex();
+
+chunk.then(embed).then(store);
+const indexFlow = new Flow(chunk);
 
 // Online: Query and answer
-const queryFlow = new Flow(
-  new EmbedQuery() >> 
-  new RetrieveDocs() >> 
-  new GenerateAnswer()
-);
+const queryEmbed = new EmbedQuery();
+const retrieve = new RetrieveDocs();
+const generate = new GenerateAnswer();
+
+queryEmbed.then(retrieve).then(generate);
+const queryFlow = new Flow(queryEmbed);
 ```
 
 ### Workflow Pattern
 ```typescript
-const writingFlow = new Flow(
-  new GenerateOutline() >> 
-  new WriteContent() >> 
-  new ReviewAndRefine()
-);
+const outline = new GenerateOutline();
+const write = new WriteContent();
+const review = new ReviewAndRefine();
+
+// Chain nodes in sequence
+outline.then(write).then(review);
+
+const writingFlow = new Flow(outline);
 ```
 
 ## Error Handling & Retries

@@ -1,9 +1,10 @@
 import * as readline from 'readline';
-import { SharedStore } from 'pocketchain';
+import { SharedStore, disableLogging } from 'pocketchain';
 import { createChatbotFlow } from './flow';
 import dotenv from 'dotenv';
 
 dotenv.config();
+disableLogging();
 
 async function main(): Promise<void> {
   console.log('🤖 PocketChain Chatbot');
@@ -47,7 +48,7 @@ async function main(): Promise<void> {
       shared.currentMessage = userInput;
 
       // Run the chatbot flow
-      await chatbotFlow.run(shared);
+      await chatbotFlow.runAsync(shared);
 
       // Display the response
       console.log(`Bot: ${shared.botResponse}\n`);

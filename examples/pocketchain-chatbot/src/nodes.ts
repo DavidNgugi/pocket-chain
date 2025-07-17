@@ -1,8 +1,8 @@
-import { Node, SharedStore } from 'pocketchain';
+import { AsyncNode, SharedStore } from 'pocketchain';
 import { callLLM } from './utils/llm';
 
-export class ContextNode extends Node {
-  prep(shared: SharedStore): string {
+export class ContextNode extends AsyncNode {
+  async prepAsync(shared: SharedStore): Promise<string> {
     const history = shared.conversationHistory || [];
     const currentMessage = shared.currentMessage || '';
     
@@ -19,25 +19,25 @@ export class ContextNode extends Node {
     return context;
   }
 
-  exec(context: string): string {
+  async execAsync(context: string): Promise<string> {
     return context;
   }
 
-  post(shared: SharedStore, prepRes: string, execRes: string): void {
+  async postAsync(shared: SharedStore, prepRes: string, execRes: string): Promise<void> {
     shared.context = execRes;
   }
 }
 
-export class ResponseNode extends Node {
+export class ResponseNode extends AsyncNode {
   constructor() {
     super(3, 1000); // 3 retries, 1 second wait
   }
 
-  prep(shared: SharedStore): string {
+  async prepAsync(shared: SharedStore): Promise<string> {
     return shared.context || '';
   }
 
-  async exec(context: string): Promise<string> {
+  async execAsync(context: string): Promise<string> {
     const prompt = `You are a helpful and friendly chatbot. Respond naturally to the user's message.
 
 Context: ${context}
@@ -47,12 +47,12 @@ Provide a helpful, conversational response:`;
     return await callLLM(prompt);
   }
 
-  execFallback(prepRes: string, exc: Error): string {
+  async execFallbackAsync(prepRes: string, exc: Error): Promise<string> {
     console.error('LLM call failed, using fallback response:', exc.message);
     return "I'm sorry, I'm having trouble processing your request right now. Could you try again?";
   }
 
-  post(shared: SharedStore, prepRes: string, execRes: string): void {
+  async postAsync(shared: SharedStore, prepRes: string, execRes: string): Promise<void> {
     // Store the response
     shared.botResponse = execRes;
     

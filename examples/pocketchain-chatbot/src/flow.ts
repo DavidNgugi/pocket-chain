@@ -1,14 +1,14 @@
-import { Flow } from 'pocketchain';
+import { AsyncFlow } from 'pocketchain';
 import { ContextNode, ResponseNode } from './nodes';
 
-export function createChatbotFlow(): Flow {
+export function createChatbotFlow(): AsyncFlow {
   // Create nodes
   const contextNode = new ContextNode();
   const responseNode = new ResponseNode();
   
-  // Connect nodes in sequence
-  contextNode >> responseNode;
+  // Connect nodes with natural syntax
+  contextNode.then(responseNode);
   
   // Create flow starting with context node
-  return new Flow(contextNode);
+  return new AsyncFlow(contextNode);
 } 

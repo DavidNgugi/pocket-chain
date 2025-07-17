@@ -1,4 +1,6 @@
-import { SharedStore } from 'pocketchain';
+import { SharedStore, disableLogging } from 'pocketchain';
+
+disableLogging();
 import { createAgentFlow } from './flow';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -29,7 +31,7 @@ async function main(): Promise<void> {
       console.log('─'.repeat(60));
       
       shared.task = task;
-      await agentFlow.run(shared);
+      await agentFlow.runAsync(shared);
       
       console.log('\n📄 Task Summary:');
       console.log(shared.finalSummary);

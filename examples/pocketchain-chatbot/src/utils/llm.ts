@@ -16,7 +16,6 @@ export async function callLLM(prompt: string): Promise<string> {
     const response = await client.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
-      max_tokens: parseInt(process.env.MAX_TOKENS || '150'),
       temperature: 0.7,
     });
 

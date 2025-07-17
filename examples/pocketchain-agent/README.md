@@ -99,7 +99,6 @@ Agent: I'll design a marketing strategy by:
 
 - `OPENAI_API_KEY`: Your OpenAI API key (required)
 - `OPENAI_MODEL`: Model to use (default: "gpt-4")
-- `MAX_TOKENS`: Maximum response length (default: 1000)
 - `MAX_STEPS`: Maximum number of steps per task (default: 10)
 - `THINKING_TIME`: Time to think between steps in milliseconds (default: 1000)
 

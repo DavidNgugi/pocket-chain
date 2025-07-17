@@ -225,8 +225,8 @@ my_project/
       const getQuestionNode = new GetQuestionNode();
       const answerNode = new AnswerNode();
       
-      // Connect nodes in sequence
-      getQuestionNode >> answerNode;
+      // Connect nodes with natural syntax
+      getQuestionNode.then(answerNode);
       
       // Create flow starting with input node
       return new Flow(getQuestionNode);
@@ -1615,7 +1615,6 @@ Here, we provide some minimal example implementations:
         response = client.messages.create(
             model="claude-2",
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=100
         )
         return response.content
     ```

@@ -1,4 +1,5 @@
-import { Flow } from 'pocketchain';
+import { AsyncFlow } from 'pocketchain';
+
 import { 
   AnalyzeTask, 
   DecideAction, 
@@ -11,27 +12,27 @@ import {
  * Create the multi-step agent flow
  * This flow implements dynamic decision making and error recovery
  */
-export function createAgentFlow(): Flow {
+export function createAgentFlow(): AsyncFlow {
   const analyzeNode = new AnalyzeTask();
   const decideNode = new DecideAction();
   const executeNode = new ExecuteStep();
   const completeNode = new CompleteTask();
   const errorNode = new HandleError();
 
-  // Connect nodes with conditional branching
-  analyzeNode >> decideNode;
+  // Connect nodes with natural English-like syntax
+  analyzeNode.then(decideNode);
   
   // Decision-based transitions
-  decideNode - "start" >> executeNode;
-  decideNode - "execute" >> executeNode;
-  decideNode - "complete" >> completeNode;
-  decideNode - "error" >> errorNode;
+  decideNode.on("start", executeNode);
+  decideNode.on("execute", executeNode);
+  decideNode.on("complete", completeNode);
+  decideNode.on("error", errorNode);
   
   // Loop back to decision after execution
-  executeNode >> decideNode;
+  executeNode.then(decideNode);
   
   // Error recovery loops back to decision
-  errorNode >> decideNode;
+  errorNode.then(decideNode);
 
-  return new Flow(analyzeNode);
+  return new AsyncFlow(analyzeNode);
 } 

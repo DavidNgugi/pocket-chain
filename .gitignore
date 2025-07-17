@@ -7,6 +7,11 @@ yarn-error.log*
 # Build output
 dist/
 build/
+src/**/*.d.ts
+src/**/*.d.ts.map
+src/**/*.d.js
+src/**/*.js.map
+src/**/*.js
 *.tsbuildinfo
 
 # IDE and editor files
