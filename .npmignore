@@ -1,0 +1,51 @@
+# Source
+src/
+tests/
+examples/
+docs/
+
+# Config files
+tsconfig.json
+jest.config.js
+.eslintrc
+.prettierrc
+.editorconfig
+
+# Git files
+.git/
+.gitignore
+
+# CI/CD
+.github/
+.github/workflows/
+.github/workflows/*.yml
+.gitlab-ci.yml
+.travis.yml
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory
+coverage/
+
+# Development environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Misc
+.DS_Store
+Thumbs.db 
