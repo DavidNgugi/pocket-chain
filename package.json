@@ -1,5 +1,5 @@
 {
-  "name": "pocketchain",
+  "name": "pocketflow-node",
   "version": "1.0.0",
   "description": "A 100-line minimalist LLM framework for TypeScript/Node.js - inspired by PocketFlow by Zachary Huang",
   "main": "dist/index.js",
@@ -28,12 +28,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DavidNgugi/pocketchain.git"
+    "url": "https://github.com/DavidNgugi/pocketflow-node.git"
   },
   "bugs": {
-    "url": "https://github.com/DavidNgugi/pocketchain/issues"
+    "url": "https://github.com/DavidNgugi/pocketflow-node/issues"
   },
-  "homepage": "https://github.com/DavidNgugi/pocketchain#readme",
+  "homepage": "https://github.com/DavidNgugi/pocketflow-node#readme",
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^22.0.0",

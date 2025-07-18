@@ -1,0 +1,35 @@
+{
+  "name": "pocketflow-node-chatbot",
+  "version": "1.0.0",
+  "description": "A simple conversational chatbot using PocketFlow-Node",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/main.js",
+    "dev": "ts-node src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pocketflow-node",
+    "chatbot",
+    "llm",
+    "ai",
+    "conversation"
+  ],
+  "author": "PocketFlow-Node Community",
+  "license": "MIT",
+  "dependencies": {
+    "pocketflow-node": "file:../../",
+    "openai": "^4.20.1",
+    "dotenv": "^16.3.1",
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

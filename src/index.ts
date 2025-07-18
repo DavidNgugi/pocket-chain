@@ -186,6 +186,10 @@ export abstract class AsyncNode extends Node implements IAsyncNode {
     return await this.postAsync(shared, p, e);
   }
 
+  async runAsyncInFlow(shared: SharedStore): Promise<Action | void> {
+    return await this._runAsync(shared);
+  }
+
   protected override _run(shared: SharedStore): never { throw new Error("Use runAsync."); }
 }
 
@@ -229,9 +233,9 @@ export class AsyncFlow extends Flow implements IAsyncNode {
     while (curr) {
       logger.debug("AsyncFlow: Running node:", curr.constructor.name);
       curr.setParams(p);
-      if (typeof (curr as any).runAsync === 'function') {
-        logger.debug("AsyncFlow: Using runAsync for", curr.constructor.name);
-        lastAction = await (curr as IAsyncNode).runAsync(shared);
+      if (curr instanceof AsyncNode) {
+        logger.debug("AsyncFlow: Using runAsyncInFlow for AsyncNode", curr.constructor.name);
+        lastAction = await (curr as AsyncNode).runAsyncInFlow(shared);
       } else {
         logger.debug("AsyncFlow: Using _run for", curr.constructor.name);
         lastAction = curr._run(shared);

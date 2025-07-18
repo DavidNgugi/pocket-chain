@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Agentic Coding with PocketChain"
+title: "Agentic Coding with PocketFlow-Node"
 ---
 
 # Agentic Coding: Humans Design, Agents code!
@@ -98,7 +98,7 @@ Agentic Coding should be a collaboration between Human System Design and Agent I
       {: .warning }
 
 4. **Data Design**: Design the shared store that nodes will use to communicate.
-   - One core design principle for PocketChain is to use a well-designed [shared store](./core_abstraction/communication.md)—a data contract that all nodes agree upon to retrieve and store data.
+   - One core design principle for PocketFlow-Node is to use a well-designed [shared store](./core_abstraction/communication.md)—a data contract that all nodes agree upon to retrieve and store data.
       - For simple systems, use an in-memory object.
       - For more complex systems or when persistence is required, use a database.
       - **Don't Repeat Yourself**: Use in-memory references or foreign keys.
@@ -181,7 +181,7 @@ my_project/
 - **`nodes.ts`**: Contains all the node definitions.
   ```typescript
   // nodes.ts
-  import { Node, SharedStore } from 'pocketchain';
+  import { Node, SharedStore } from 'pocketflow-node';
   import { callLLM } from './utils/call_llm';
 
   class GetQuestionNode extends Node {
@@ -217,7 +217,7 @@ my_project/
 - **`flow.ts`**: Implements functions that create flows by importing node definitions and connecting them.
   ```typescript
   // flow.ts
-  import { Flow } from 'pocketchain';
+  import { Flow } from 'pocketflow-node';
   import { GetQuestionNode, AnswerNode } from './nodes';
 
   export function createQAFlow(): Flow {
@@ -265,9 +265,9 @@ title: "Home"
 nav_order: 1
 ---
 
-# PocketChain
+# PocketFlow-Node
 
-A [300-line](https://github.com/DavidNgugi/pocketchain/blob/main/src/index.ts) minimalist LLM framework for TypeScript/Node.js
+A [300-line](https://github.com/DavidNgugi/pocketflow-node/blob/main/src/index.ts) minimalist LLM framework for TypeScript/Node.js
 
 - **Lightweight**: Just the core graph abstraction in 300 lines. ZERO dependencies, and vendor lock-in.
 - **Expressive**: Everything you love from larger frameworks—([Multi-](./design_pattern/multi_agent.html))[Agents](./design_pattern/agent.html), [Workflow](./design_pattern/workflow.html), [RAG](./design_pattern/rag.html), and more.  
@@ -326,7 +326,7 @@ We **do not** provide built-in utilities. Instead, we offer *examples*—please 
 
 ## Ready to build your Apps? 
 
-Check out [Agentic Coding Guidance](./guide.md), the fastest way to develop LLM projects with PocketChain!
+Check out [Agentic Coding Guidance](./guide.md), the fastest way to develop LLM projects with PocketFlow-Node!
 
 ================================================
 File: docs/core_abstraction/async.md

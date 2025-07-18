@@ -1,31 +1,31 @@
-# PocketChain Examples
+# PocketFlow-Node Examples
 
-This directory contains real-world examples demonstrating how to use PocketChain for various LLM applications. Each example is a complete, runnable project with its own documentation.
+This directory contains real-world examples demonstrating how to use PocketFlow-Node for various LLM applications. Each example is a complete, runnable project with its own documentation.
 
 ## Available Examples
 
-### 🤖 [pocketchain-chatbot](./pocketchain-chatbot/)
+### 🤖 [pocketflow-node-chatbot](./pocketflow-node-chatbot/)
 A simple conversational chatbot that can handle basic Q&A and maintain conversation context.
 
-### 🔍 [pocketchain-search](./pocketchain-search/)
+### 🔍 [pocketflow-node-search](./pocketflow-node-search/)
 A web search agent that can search the internet and provide answers based on current information.
 
-### 📚 [pocketchain-rag](./pocketchain-rag/)
+### 📚 [pocketflow-node-rag](./pocketflow-node-rag/)
 A Retrieval-Augmented Generation system that can answer questions based on your own documents.
 
-### 🕷️ [pocketchain-scraper](./pocketchain-scraper/)
+### 🕷️ [pocketflow-node-scraper](./pocketflow-node-scraper/)
 A web scraper that extracts and summarizes content from websites.
 
-### 🧠 [pocketchain-agent](./pocketchain-agent/)
+### 🧠 [pocketflow-node-agent](./pocketflow-node-agent/)
 A multi-step agent that can perform complex tasks by breaking them down into smaller actions.
 
-### 📊 [pocketchain-analytics](./pocketchain-analytics/)
+### 📊 [pocketflow-node-analytics](./pocketflow-node-analytics/)
 A data analysis tool that can process CSV files and generate insights using LLMs.
 
-### 📝 [pocketchain-writer](./pocketchain-writer/)
+### 📝 [pocketflow-node-writer](./pocketflow-node-writer/)
 A content generation system that can write articles, blog posts, and other long-form content.
 
-### 🎯 [pocketchain-classifier](./pocketchain-classifier/)
+### 🎯 [pocketflow-node-classifier](./pocketflow-node-classifier/)
 A text classification system that can categorize documents and emails.
 
 ## Getting Started
@@ -33,7 +33,7 @@ A text classification system that can categorize documents and emails.
 Each example follows the same structure:
 
 ```
-pocketchain-example/
+pocketflow-node-example/
 ├── README.md          # Documentation and usage instructions
 ├── package.json       # Dependencies and scripts
 ├── env.example       # Environment variables template
@@ -88,7 +88,7 @@ All examples are **complete and ready to run** with the following components:
 
 ### 1. Chatbot Example
 ```bash
-cd examples/pocketchain-chatbot
+cd examples/pocketflow-node-chatbot
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -97,7 +97,7 @@ npm start
 
 ### 2. Search Example
 ```bash
-cd examples/pocketchain-search
+cd examples/pocketflow-node-search
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -106,7 +106,7 @@ npm start
 
 ### 3. RAG Example
 ```bash
-cd examples/pocketchain-rag
+cd examples/pocketflow-node-rag
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -116,7 +116,7 @@ npm start      # Then run the RAG system
 
 ### 4. Scraper Example
 ```bash
-cd examples/pocketchain-scraper
+cd examples/pocketflow-node-scraper
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -125,7 +125,7 @@ npm start
 
 ### 5. Agent Example
 ```bash
-cd examples/pocketchain-agent
+cd examples/pocketflow-node-agent
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -134,7 +134,7 @@ npm start
 
 ### 6. Analytics Example
 ```bash
-cd examples/pocketchain-analytics
+cd examples/pocketflow-node-analytics
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -143,7 +143,7 @@ npm start
 
 ### 7. Writer Example
 ```bash
-cd examples/pocketchain-writer
+cd examples/pocketflow-node-writer
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -152,7 +152,7 @@ npm start
 
 ### 8. Classifier Example
 ```bash
-cd examples/pocketchain-classifier
+cd examples/pocketflow-node-classifier
 npm install
 cp env.example .env
 # Add your OpenAI API key to .env
@@ -184,7 +184,7 @@ Feel free to create new examples or improve existing ones! Each example should b
 - Self-contained and runnable
 - Well-documented
 - Demonstrate real-world use cases
-- Follow PocketChain best practices
+- Follow PocketFlow-Node best practices
 
 ## Next Steps
 
@@ -197,4 +197,4 @@ To complete the implementation:
 
 ## License
 
-These examples are provided under the same MIT license as PocketChain. 
+These examples are provided under the same MIT license as PocketFlow-Node. 

@@ -1,16 +1,21 @@
-# PocketChain
+# PocketFlow-Node
 
 ```
 
-▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖▗▄▄▄▖▗▄▄▄▖ ▗▄▄▖▗▖ ▗▖ ▗▄▖ ▗▄▄▄▖▗▖  ▗▖
-▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌     █  ▐▌   ▐▌ ▐▌▐▌ ▐▌  █  ▐▛▚▖▐▌
-▐▛▀▘ ▐▌ ▐▌▐▌   ▐▛▚▖ ▐▛▀▀▘  █  ▐▌   ▐▛▀▜▌▐▛▀▜▌  █  ▐▌ ▝▜▌
-▐▌   ▝▚▄▞▘▝▚▄▄▖▐▌ ▐▌▐▙▄▄▖  █  ▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▗▄█▄▖▐▌  ▐▌
+
+______          _        _  ______ _                      _   _           _      
+| ___ \        | |      | | |  ___| |                    | \ | |         | |     
+| |_/ /__   ___| | _____| |_| |_  | | _____      ________|  \| | ___   __| | ___ 
+|  __/ _ \ / __| |/ / _ \ __|  _| | |/ _ \ \ /\ / /______| . ` |/ _ \ / _` |/ _ \
+| | | (_) | (__|   <  __/ |_| |   | | (_) \ V  V /       | |\  | (_) | (_| |  __/
+\_|  \___/ \___|_|\_\___|\__\_|   |_|\___/ \_/\_/        \_| \_/\___/ \__,_|\___|
+                                                                                 
+                                                                                 
                                                         
 
 ```
 
-A minimalist Agentic LLM framework for TypeScript/Node.js
+A minimalist Agentic LLM framework port of [PocketFlow](https://github.com/The-Pocket/PocketFlow) for TypeScript/Node.js
 
 - **Lightweight**: Just less than 300 lines. Zero bloat, zero dependencies, zero vendor lock-in.
   
@@ -20,26 +25,26 @@ A minimalist Agentic LLM framework for TypeScript/Node.js
 
 ## 🙏 Acknowledgments
 
-**PocketChain is inspired by [PocketFlow](https://github.com/The-Pocket/PocketFlow) by [Zachary Huang](https://github.com/The-Pocket/PocketFlow).** 
+**PocketFlow-Node is inspired by [PocketFlow](https://github.com/The-Pocket/PocketFlow) by [Zachary Huang](https://github.com/The-Pocket/PocketFlow).** 
 
 This TypeScript/Node.js version maintains the same minimalist philosophy and core abstractions as the original Python framework, bringing the power of agentic LLM development to the Node.js ecosystem.
 
 ## Installation
 
 ```bash
-npm install pocketchain
+npm install pocketflow-node
 ```
 
 Or install directly from GitHub:
 
 ```bash
-npm install github:DavidNgugi/pocketchain
+npm install github:DavidNgugi/pocketflow-node
 ```
 
 ## Quick Start
 
 ```typescript
-import { Node, Flow, SharedStore } from 'pocketchain';
+import { Node, Flow, SharedStore } from 'pocketflow-node';
 
 // Define a simple node
 class GreetNode extends Node {
@@ -284,7 +289,7 @@ import {
   SharedStore, 
   Params, 
   Action 
-} from 'pocketchain';
+} from 'pocketflow-node';
 ```
 
 ## Examples
@@ -312,8 +317,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## Community
 
 - **Discord**: Join our [Discord server](https://discord.gg/hUHHE9Sa6T)
-- **Issues**: Report bugs and request features on [GitHub](https://github.com/DavidNgugi/pocketchain/issues)
-- **Discussions**: Share ideas and ask questions in [GitHub Discussions](https://github.com/DavidNgugi/pocketchain/discussions)
+- **Issues**: Report bugs and request features on [GitHub](https://github.com/DavidNgugi/pocketflow-node/issues)
+- **Discussions**: Share ideas and ask questions in [GitHub Discussions](https://github.com/DavidNgugi/pocketflow-node/discussions)
 
 ## Related Projects
 
@@ -324,4 +329,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Built with ❤️ by the PocketChain community, inspired by Zachary Huang's PocketFlow.**
+**Built with ❤️ by the PocketFlow-Node community, inspired by Zachary Huang's PocketFlow.**
