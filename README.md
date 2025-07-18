@@ -76,6 +76,11 @@ const processData = new ProcessData();
 const saveResult = new SaveResult();
 
 loadData.then(processData).then(saveResult);
+
+// OR
+
+// loadData >> processData >> saveResult;
+
 const complexFlow = new Flow(loadData);
 ```
 
